@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты поиска</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Результаты поиска</h1>
+    <ul>
+        {% for car in cars %}
+            <li>
+                <img src="{{ car[1] if car[1] else '-' }}" alt="Фото машины">
+                <h2>{{ car[2] if car[2] else '-' }}</h2>
+                <p>Цена: {{ car[3] if car[3] else '-' }}</p>
+                <p>Двигатель: {{ car[4] if car[4] else '-' }}</p>
+                <p>КПП: {{ car[5] if car[5] else '-' }}</p>
+                <p>Привод: {{ car[6] if car[6] else '-' }}</p>
+                <p>Кузов: {{ car[7] if car[7] else '-' }}</p>
+                <p>Цвет: {{ car[8] if car[8] else '-' }}</p>
+                <p>Пробег: {{ car[9] if car[9] else '-' }}</p>
+                <p>Руль: {{ car[10] if car[10] else '-' }}</p>
+                <a href="{{ car[11] if car[11] else '-' }}">Больше информации</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
